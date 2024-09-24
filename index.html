@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Open Web Docs and MDN</title>
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/owd.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>Web security docs for MDN</h1>
+        </section>
+
+        <section>
+          <h1>About me</h1>
+          <ul>
+            <li>Will Bamberg</li>
+            <li>
+              Technical Writer for
+              <a href="https://openwebdocs.org">Open Web Docs</a>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>About this session (1)</h1>
+          <ul>
+            <li>We need better security docs on MDN</li>
+            <li>
+              We have:
+              <ul>
+                <li>
+                  a committed
+                  <a href="https://github.com/openwebdocs/project/issues/198"
+                    >project proposal</a
+                  >
+                </li>
+                <li>
+                  a
+                  <a
+                    href="https://docs.google.com/document/d/1p1GtjmTd1uQrO2PRb_uUflAfQpEsfs7hBaopYeuoPMM/edit#heading=h.ck74bmw37a7r"
+                    >draft outline</a
+                  >
+                  for the work
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              We would like:
+              <ul>
+                <li>feedback on our plan</li>
+                <li>ongoing review for the work</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>About this session (2)</h1>
+          <ul>
+            <li>Please mute when you're not speaking</li>
+            <li>
+              Please "raise your hand" in Zoom to ask a question or comment
+            </li>
+            <li>The session is not being recorded</li>
+            <li>
+              Discussion notes are in IRC:
+              <ul>
+                <li>
+                  <a href="https://irc.w3.org/?channels=%23mdn-security">
+                    https://irc.w3.org/?channels=%23mdn-security</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              This breakout is operated under the
+              <a href="https://www.w3.org/policies/code-of-conduct/"
+                >W3C Code of Ethics and Professional Conduct</a
+              >
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>We need better security docs on MDN</h1>
+          <img style="float: left" src="dist/media/current-mdn-docs.png" />
+          <ul>
+            <li>No organization</li>
+            <li>No path to follow</li>
+            <li>Incomplete</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Security docs organization</h1>
+          <ul>
+            <div class="grid">
+              <div class="item one">
+                <p>Theory</p>
+                <ul>
+                  <li>Same-origin policy</li>
+                  <li>Secure design principles</li>
+                </ul>
+              </div>
+              <div class="item two">
+                <p>Practices</p>
+                <ul>
+                  <li>Authentication</li>
+                  <li>Session management</li>
+                </ul>
+              </div>
+              <div class="item three">
+                <p>Attacks</p>
+                <ul>
+                  <li>CSRF</li>
+                  <li>XSS</li>
+                </ul>
+              </div>
+              <div class="item four">
+                <p>Tools</p>
+                <ul>
+                  <li>CSP</li>
+                  <li>SRI</li>
+                </ul>
+              </div>
+            </div>
+          </ul>
+        </section>
+        <section>
+          <h1>Practices</h1>
+          <ul>
+            <li>Things a developer (might) need to take care of</li>
+            <li>"If you're doing X, then you need to take care of Y"</li>
+            <li>Focused on <i>concrete practical guidance</i>.</li>
+          </ul>
+        </section>
+        <section>
+          <section>
+            <h1>Practices</h1>
+            <ul>
+              <li>101</li>
+              <li>Authentication</li>
+              <li>Authorization/access control</li>
+              <li>Session management</li>
+              <li>Configuration</li>
+              <li>3rd party software</li>
+              <li>User input validation</li>
+              <li>Operations</li>
+            </ul>
+          </section>
+
+          <section>
+            <h1>Practices 101</h1>
+            <ul>
+              <li>Use HTTPS for everything</li>
+              <li>Redirect HTTP to HTTPS</li>
+              <li>Have a CSP</li>
+              <li>Set cookie headers carefully</li>
+              <li>Be conservative with CORS</li>
+              <li>Validate form data on client and server</li>
+              <li>Escape text and code</li>
+              <li>Use a proven framework</li>
+            </ul>
+          </section>
+          <section>
+            <h1>Authentication</h1>
+            <ul>
+              <li>Passwords: strength, transmission, storage</li>
+              <li>Password managers</li>
+              <li>MFA</li>
+              <li>Take care with error messages</li>
+              <li>CAPTCHA</li>
+              <li>Forgotten password flow</li>
+              <li>Security questions</li>
+              <li>Passwordless protocols: OAuth, OpenID</li>
+              <li>Web Authentication</li>
+            </ul>
+          </section>
+          <section>
+            <h1>Authorization</h1>
+            <ul>
+              <li>Checking REST calls, API keys</li>
+              <li>Separation of users and admins</li>
+              <li>Least privilege and default deny</li>
+            </ul>
+          </section>
+          <section>
+            <h1>Session Management</h1>
+            <ul>
+              <li>Use session management toolkits</li>
+              <li>Use random session identifiers</li>
+              <li>Session expiry</li>
+              <li>Cookies: secure cookie handling</li>
+              <li>CSRF protection</li>
+              <li>Reauthenticate for high risk operations</li>
+            </ul>
+          </section>
+          <section>
+            <h1>Configuration</h1>
+            <ul>
+              <li>Turn off directory browsing</li>
+              <li>Remove unnecessary files (e.g. git files)</li>
+              <li>Disable unnecessary plugins and services</li>
+              <li>Secrets management</li>
+              <li>CSRF protection</li>
+              <li>Keep dev and live databases separate</li>
+            </ul>
+          </section>
+          <section>
+            <h1>3rd party software</h1>
+            <ul>
+              <li>3rd party JavaScript (HTTPS, CSPs, SRI)</li>
+              <li>npm (managing dependencies)</li>
+              <li>Patching strategy</li>
+            </ul>
+          </section>
+          <section>
+            <h1>User input validation</h1>
+            <ul>
+              <li>Validation, sanitization, input hints</li>
+              <li>Buffer overflows</li>
+              <li>File upload</li>
+            </ul>
+          </section>
+          <section>
+            <h1>Operations</h1>
+            <ul>
+              <li>Automate deployment</li>
+              <li>Monitor</li>
+              <li>Patching strategy</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h1>Discussion questions</h1>
+          <ul>
+            <li>Feedback on overall shape</li>
+            <li>How to talk about frameworks?</li>
+            <li>The fear of imperfections</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+      });
+    </script>
+  </body>
+</html>
