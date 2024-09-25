@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta content="width=device-width" name="viewport" />
-    <title>Curating the web platform's documentation and data</title>
+    <title>Security guidance for web developers</title>
     <link rel="stylesheet" href="../Templates/slides.css" />
     <!-- To use the b6+ framework, include this: -->
     <script src="../Templates/b6plus.js"></script>
@@ -88,7 +88,7 @@
       </p>
     </section>
 
-    <section class="slide side">
+    <section class="slide" id="lists">
       <h2>Funded by donations</h2>
       <p>
         Open Web Docs is a non-profit open collective employing 4 open-source
@@ -113,103 +113,90 @@
 
     <section class="slide" id="lists">
       <h2>Some background</h2>
-      <p><blockquote>
-        "documentation plays a major role in promoting security best practices
-        and in helping web application developers understand security threats
-        and mechanisms at their disposal"
-      </blockquote>
-      -
-      <a href="https://www.w3.org/2023/03/secure-the-web-forward/report.html"
-        >Secure the Web Forward, 2023</a
-      ></p>
-      <p>
-      <blockquote>
-        "The mission of this Community Group is to increase the overall security
-        of web application development ... by writing security
-        best practices web developer and providing a platform for stakeholder collaboration."
-      </blockquote>
-      - <a href="https://www.w3.org/community/swag/"
-        >Security Web Application Guidelines Community Group (SWAG CG)</a
-      ></p>
+      <ul>
+        <li>
+          <a
+            href="https://www.w3.org/2023/03/secure-the-web-forward/report.html"
+            >Secure the Web Forward, 2023</a
+          >: "documentation plays a major role in promoting security best
+          practices and in helping web application developers understand
+          security threats and mechanisms at their disposal" -
+        </li>
+        <li>
+          <a href="https://www.w3.org/community/swag/"
+            >Security Web Application Guidelines Community Group (SWAG CG)</a
+          >
+          "The mission of this Community Group is to increase the overall
+          security of web application development ... by writing security best
+          practices web developer and providing a platform for stakeholder
+          collaboration." -
+        </li>
+      </ul>
     </section>
 
-    <section class="comment">
-      <p>
-        In this session we want to talk about the role of (at least) these 6
-        repositories
-      </p>
-      <p>
-        And we want to discuss the question: what is available on the web
-        platform and to whom?
-      </p>
-    </section>
+    <section class="comment"></section>
 
     <section class="slide" id="lists">
       <h2>Selected topics (1)</h2>
-      <p>Security considerations for Web APIs</p>
+      <p>Security 101</p>
       <ul>
-            <li>For example, <code>fetch()</code></li>
-            <li>
-              Survey key Web APIs and ensure security considerations are
-              documented on MDN
-            </li>
-        </ul>
-    </section>
-
-
-    <section class="comment">
-      <p>
-        The browser-specs repository contains relevant specifications that
-        define the web platform
-      </p>
-      <p>
-        A new spec is usually added automatically, make sure your spec is
-        included there!
-      </p>
-      <p>
-        We could say: the web platform is what is defined in 619 "good" specs
-      </p>
+        <li>
+          Fundamental things a developer can do, that have a big impact on the
+          security of the site, such as:
+          <ul>
+            <li>Use HTTPS for everything</li>
+            <li>Have a CSP</li>
+            <li>Set cookie headers correctly...</li>
+          </ul>
+        </li>
+        <li><i>Relatively</i> low-effort/high reward things</li>
+        <li>
+          Partly(?) addressed by Chris Mills' work on
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/Security/Practical_implementation_guides"
+            >Practical security implementation guides
+          </a>
+        </li>
+      </ul>
     </section>
 
     <section class="slide" id="lists">
       <h2>Selected topics (2)</h2>
-
-      <p>
-        Frameworks/libraries</p>
-
-        <ul>
-          <li>Should MDN recommend specific frameworks/libraries?</li>
-          <li>And/or document criteria to help developers choose them</li>
-        </ul>
-    </section>
-
-    <section class="comment">
-      <p>webref is quite good at providing machine-readable data</p>
-      <p>however, not everything is made available</p>
-      <p>
-        For example, there is no index of HTTP headers, or WebDriver endpoints
-      </p>
+      <p>Security considerations for Web APIs</p>
+      <ul>
+        <li>For example, <code>fetch()</code></li>
+        <li>
+          Survey key Web APIs and ensure security considerations are documented
+          on MDN
+        </li>
+      </ul>
     </section>
 
     <section class="slide" id="lists">
       <h2>Selected topics (3)</h2>
-      <p>
-        CSP
-      </p>
+
+      <p>Frameworks/libraries</p>
+
       <ul>
-          <li>
-            How can we help CSP gain more adoption with Web Developers (<a
-              href="https://github.com/w3c-cg/swag/issues/3"
-              >SWAG issue</a
-            >)
-          </li>
-          <li>
-            OWASP/Google guidance around strict (nonce/hash based) CSP
-          </li>
-          <li>Documentation on CSP tooling</li>
-        </ul>
+        <li>Should MDN recommend specific frameworks/libraries?</li>
+        <li>And/or document criteria to help developers choose them</li>
+      </ul>
     </section>
 
+    <section class="slide" id="lists">
+      <h2>Selected topics (4)</h2>
+      <p>CSP</p>
+      <ul>
+        <li>
+          How can we help CSP gain more adoption with Web Developers (<a
+            href="https://github.com/w3c-cg/swag/issues/3"
+            >SWAG issue</a
+          >)
+        </li>
+        <li>OWASP/Google guidance around strict (nonce/hash based) CSP</li>
+        <li>Documentation on CSP tooling</li>
+      </ul>
+    </section>
 
     <!--
   <section class="slide">
